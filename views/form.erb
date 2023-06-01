@@ -1,0 +1,10 @@
+<form action="/check_hand" method="post">
+  <label for="hand">Enter your poker hand:</label>
+  <input type="text" id="hand" name="hand" required/>
+
+  <input type="submit" value="Check hand">
+</form>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
