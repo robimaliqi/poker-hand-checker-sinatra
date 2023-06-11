@@ -16,15 +16,6 @@ This is a Sinatra-based web application that evaluates and ranks poker hands.
 
 Visit `http://localhost:9292` in your web browser to view the application.
 
-### Docker Development
-
-1. Ensure Docker is installed on your system.
-2. Run `./dev.sh` in the project root directory. This script:
-   - Starts a Docker container and mounts the current directory into the container.
-   - Opens a shell inside the container if it's already running.
-
-Run `bundle install` inside the container to install RubyGem dependencies. These are cached in a Docker volume for efficiency.
-
 ## Usage
 
 Enter a poker hand (e.g. "AH 2D 3C 4C 5D") into the form on the web page and click 'Check hand'. The application will return the name of a hand.
