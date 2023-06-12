@@ -1,10 +1,10 @@
 module ValidHandsHelper
 
   def one_pair?(processed_hand)
-    numbers = processed_hand.map { |card| card[0...-1] }
+    ranks = processed_hand.map { |card| card[0...-1] }
     counts = Hash.new(0)
 
-    numbers[0...-1].each { |number| counts[number] += 1 }
+    ranks[0...-1].each { |number| counts[number] += 1 }
 
     counts.values.any? { |count| count == 2 }
   end
