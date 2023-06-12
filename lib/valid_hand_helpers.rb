@@ -10,14 +10,14 @@ module ValidHandsHelper
   end
 
   def two_pair?(processed_hand)
-    face_values = processed_hand.map { |card| card[0...-1] } # Extract face values from each card
+    ranks = processed_hand.map { |card| card[0...-1] } # Extract face values from each card
     face_counts = face_values.group_by { |value| value }.transform_values(&:count) # Count occurrences of each face value
 
     return face_counts.values.count(2) == 2 && face_counts.values.count(1) == 1
   end
   
   def three_of_kind?(processed_hand)
-    face_values = processed_hand.map { |card| card[0...-1] } # Extract face values from each card
+    ranks = processed_hand.map { |card| card[0...-1] } # Extract face values from each card
     face_counts = face_values.group_by { |value| value }.transform_values(&:count) # Count occurrences of each face value
 
     return face_counts.values.include?(3)
@@ -45,7 +45,7 @@ module ValidHandsHelper
 
   def full_house?(processed_hand)
     # Count the occurrences of each card rank
-    card_ranks = processed_hand.map { |card| card[0..-2] } # Extract the rank of each card
+    ranks = processed_hand.map { |card| card[0..-2] } # Extract the rank of each card
     rank_counts = card_ranks.tally
 
     # Check if there are two distinct ranks with counts 3 and 2
